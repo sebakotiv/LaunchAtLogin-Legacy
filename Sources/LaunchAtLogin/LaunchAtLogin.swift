@@ -19,7 +19,7 @@ public enum LaunchAtLogin {
 	@available(macOS 10.15, *)
 	public static let publisher = _publisher.eraseToAnyPublisher()
 
-	private static let id = "\(Bundle.main.bundleIdentifier!)-LaunchAtLoginHelper"
+	private static let id = "\(Bundle.main.bundleIdentifier!).LaunchAtLoginHelper"
 
 	private static var hasMigrated: Bool {
 		get { UserDefaults.standard.bool(forKey: hasMigratedKey) }

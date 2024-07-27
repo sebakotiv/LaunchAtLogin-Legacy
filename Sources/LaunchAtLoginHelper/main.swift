@@ -3,7 +3,7 @@ import AppKit
 final class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationDidFinishLaunching(_ notification: Notification) {
 		let bundleIdentifier = Bundle.main.bundleIdentifier!
-		let mainBundleIdentifier = bundleIdentifier.replacingOccurrences(of: #"-LaunchAtLoginHelper$"#, with: "", options: .regularExpression)
+		let mainBundleIdentifier = bundleIdentifier.replacingOccurrences(of: #".LaunchAtLoginHelper$"#, with: "", options: .regularExpression)
 
 		// Ensures the app is not already running.
 		guard NSRunningApplication.runningApplications(withBundleIdentifier: mainBundleIdentifier).isEmpty else {

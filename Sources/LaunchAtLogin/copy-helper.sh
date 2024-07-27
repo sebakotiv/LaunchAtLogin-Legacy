@@ -8,7 +8,7 @@ rm -rf "$helper_path"
 mkdir -p "$helper_dir"
 cp -rf "$origin_helper_path" "$helper_dir/"
 
-defaults write "$helper_path/Contents/Info" CFBundleIdentifier -string "$PRODUCT_BUNDLE_IDENTIFIER-LaunchAtLoginHelper"
+defaults write "$helper_path/Contents/Info" CFBundleIdentifier -string "$PRODUCT_BUNDLE_IDENTIFIER.LaunchAtLoginHelper"
 
 if [[ -n $CODE_SIGN_ENTITLEMENTS ]]; then
 	codesign --force --entitlements="$(dirname "$origin_helper_path")/LaunchAtLogin.entitlements" --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$helper_path"

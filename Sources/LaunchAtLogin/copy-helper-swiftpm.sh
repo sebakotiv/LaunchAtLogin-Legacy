@@ -36,7 +36,7 @@ fi
 
 unzip "$helper_path" -d "$login_items/"
 
-defaults write "$login_helper_path/Contents/Info" CFBundleIdentifier -string "$PRODUCT_BUNDLE_IDENTIFIER-LaunchAtLoginHelper"
+defaults write "$login_helper_path/Contents/Info" CFBundleIdentifier -string "$PRODUCT_BUNDLE_IDENTIFIER.LaunchAtLoginHelper"
 
 if [[ -n $CODE_SIGN_ENTITLEMENTS ]]; then
 	codesign --force --entitlements="$package_resources_path/LaunchAtLogin.entitlements" --deep --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$login_helper_path"
